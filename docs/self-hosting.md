@@ -43,7 +43,7 @@ Then sign up in the dashboard, and connect your own model key in the model picke
 
 ## Trade-offs to know
 
-- Agent sessions run on a separate sandbox provider rather than on this stack. The default is Daytona, and Platinum and E2B are also supported. The control plane you host stays small, and the instance has to be reachable so a sandbox can call back.
+- Agent sessions run on a separate sandbox provider rather than on this stack. Platinum is the default, and Daytona remains available as a legacy fallback. The control plane you host stays small, and the instance has to be reachable so a sandbox can call back.
 - `self-host start` pulls its images from Docker Hub, so plan for that when you size the network.
 - Each API container has a 640 MiB memory limit by default. Keep the default on an 8 GiB host, and raise it to 1 GiB on a 16 GiB host if API traffic hits the limit.
 - A self-hosted instance uses your own model key by default. The first run asks six things and no model key.
